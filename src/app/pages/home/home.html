@@ -1,8 +1,9 @@
 <!-- The relative order of things -->
 
 <app-hero [info]="info_service.getLandingPageInfo()"/>
+<app-project [infoArr]="info_service.getProjects()"/>
 <div class="mt-100">
-<app-project/>
+
 
 <app-techskill/>
 <app-certificates/>

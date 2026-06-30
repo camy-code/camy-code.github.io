@@ -59,11 +59,12 @@ export class InfoService {
 
   projects: Array<ProjectInterface> = [
     {
-      imgURL: '',
-      demoURL: '',
-      title: '',
-      desc: '',
-      techUsed: []
+      imgURL: 'https://upload.wikimedia.org/wikipedia/commons/thumb/d/d5/Tailwind_CSS_Logo.svg/960px-Tailwind_CSS_Logo.svg.png',
+       altIMG: 'Tailwind logo to change later',
+      demoURL: 'DO THIS LATER OR ELSE!',
+      title: 'Coming soon',
+      desc: 'Coming soon Coming soon',
+      techUsed: [this.technicalSkills[0], this.technicalSkills[1]]
     }
   ];
 

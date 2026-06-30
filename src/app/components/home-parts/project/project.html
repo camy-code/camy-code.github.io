@@ -1,1 +1,16 @@
-<p>project works!</p>
+<div class="" id="project-section">
+  <div id="content-container">
+    <div id="word_part">
+        <h2>Projects</h2>
+        <h3>Turn Ideas Into Impact</h3>
+    </div>
+    <div id="cards_part">
+        @for (item of infoArr(); track $index) {
+            <app-project-card [info]="item"/>
+        }
+    </div>
+    <div id="button-_part">
+        <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">View more</button>
+    </div>
+  </div>
+</div>
