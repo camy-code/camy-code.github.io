@@ -9,10 +9,10 @@ import { TechnicalSkills } from '../interfaces/technicalskills-interface';
 export class InfoService {
   landingPageInfo: LandpageInterface = {
     imgURL:
-      'https://media.istockphoto.com/id/1495088043/vector/user-profile-icon-avatar-or-person-icon-profile-picture-portrait-symbol-default-portrait.jpg?s=612x612&w=0&k=20&c=dhV2p1JwmloBTOaGAtaA3AW1KSnjsdMt7-U_3EZElZ0=',
+      'https://pbs.twimg.com/media/GhybPXwaoAA-5KD.jpg',
     altIMG: 'A picture of me!',
     title: 'Computer Scientist',
-    greeting: 'Hello!',
+    greeting: 'Hello! I am Cam!',
     spiel:
       'I’m a computer scientist with a growing passion for front-end design and a focus on building thoughtful, visually engaging experiences. Lately, I’ve been interested in creating practical, user-friendly solutions for individuals and businesses in less tech-focused industries.',
   };
