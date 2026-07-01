@@ -11,9 +11,11 @@ export class ProjectCard {
   info = input.required<ProjectInterface>();
 
   isHovered = false;
+  baseCardCSS = " relative flex flex-row w-3/4 rounded-xl border-2 mx-auto";
 
   onHover(state:boolean):void {
     this.isHovered = state;
+    
   }
 
 }
