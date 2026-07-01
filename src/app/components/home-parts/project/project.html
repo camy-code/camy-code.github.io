@@ -1,11 +1,12 @@
 <div class="" id="project-section">
-  <div id="content-container">
-    <div id="word_part">
+  <div id="content-container" class="">
+    <div id="word_part" class="text-center">
         <h2>Projects</h2>
         <h3>Turn Ideas Into Impact</h3>
     </div>
-    <div id="cards_part">
+    <div id="cards_part" class="flex flex-col gap-3">
         @for (item of infoArr(); track $index) {
+            <app-project-card [info]="item"/>
             <app-project-card [info]="item"/>
         }
     </div>
