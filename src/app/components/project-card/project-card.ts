@@ -14,7 +14,6 @@ export class ProjectCard {
 
   onHover(state:boolean):void {
     this.isHovered = state;
-    console.log("WE GOT HOVERED")
   }
 
 }

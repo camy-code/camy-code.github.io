@@ -1,7 +1,7 @@
 <div id="card" class="relative flex flex-row w-3/4 rounded-xl border-2 mx-auto" (mouseenter)="onHover(true)" (mouseleave)="onHover(false)">
     <img [src]="info().imgURL" [alt]="info().altIMG" class="w-[50%]  rounded-xl p-1"/>
-    <div id="word" class="flex flex-col pl-5 w-[50%]">
-        <h3 class="text-center w-[100%]">{{info().title}}</h3>
+    <div id="word" class="flex flex-col pl-5 w-[45%] grow">
+        <h3 class="text-center">{{info().title}}</h3>
         <p>{{info().desc}}</p>
         <div id="tech_part" class="flex flex-row gap-1">
             @for (item of info().techUsed; track $index) {
@@ -9,8 +9,8 @@
             }
         </div>
     </div>
-    <div class="mx-auto my-auto p-1">
-       @if (isHovered == true) { <h1>H</h1>}
+    <div class="mx-auto my-auto ">
+    <object data="./../../../assets/magnifying-glass.svg" alt="Magnifying Glass" width="150" height="15"></object>
     </div>
 </div>
 
