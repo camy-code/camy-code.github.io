@@ -10,4 +10,11 @@ import { ProjectInterface } from '../../interfaces/projects-interface';
 export class ProjectCard {
   info = input.required<ProjectInterface>();
 
+  isHovered = false;
+
+  onHover(state:boolean):void {
+    this.isHovered = state;
+    console.log("WE GOT HOVERED")
+  }
+
 }

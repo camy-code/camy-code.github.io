@@ -63,7 +63,7 @@ export class InfoService {
        altIMG: 'Tailwind logo to change later',
       demoURL: 'DO THIS LATER OR ELSE!',
       title: 'Coming soon',
-      desc: 'Coming soon Coming soon',
+      desc: 'Coming soon Coming soon Coming soon Coming soon Coming soon Coming soon Coming soon Coming soon',
       techUsed: [this.technicalSkills[0], this.technicalSkills[1]]
     }
   ];
