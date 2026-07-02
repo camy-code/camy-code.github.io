@@ -1,0 +1,12 @@
+import { Component, input } from '@angular/core';
+import { TechnicalSkills } from '../../interfaces/technicalskills-interface';
+
+@Component({
+  selector: 'app-technical-skill-card',
+  imports: [],
+  templateUrl: './technical-skill-card.html',
+  styleUrl: './technical-skill-card.css',
+})
+export class TechnicalSkillCard {
+  info = input.required<TechnicalSkills>();
+}

@@ -1,1 +1,10 @@
-<p>techskill works!</p>
+<div class=" mt-8">
+  <h2 class="text-center">Technical Skills</h2>
+  
+</div>
+<div class="grid lg:grid-cols-2 md:grid-cols-1 gap-2 mx-auto w-3/4 max-w-[825px] justify-center justify-items-center">
+  @for (item of infoArr(); track $index) {
+    <app-technical-skill-card [info]="item" />
+  }
+
+</div>

@@ -20,7 +20,7 @@ export class InfoService {
   // TODO later for pictures
   technicalSkills: Array<TechnicalSkills> = [
   {
-    logo: 'assets/logos/angular.svg',
+    logo: './assets/logos/angular.svg',
     color: '#DD0031',
     title: 'Angular',
     description: 'A powerful TypeScript-based framework for building scalable, single-page web applications.'
