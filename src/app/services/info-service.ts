@@ -17,43 +17,42 @@ export class InfoService {
       'I’m a computer scientist with a growing passion for front-end design and a focus on building thoughtful, visually engaging experiences. Lately, I’ve been interested in creating practical, user-friendly solutions for individuals and businesses in less tech-focused industries.',
   };
 
-  // TODO later for pictures
   technicalSkills: Array<TechnicalSkills> = [
   {
     logo: 'https://upload.wikimedia.org/wikipedia/commons/thumb/2/2c/Angular_icon.svg/250px-Angular_icon.svg.png',
     color: '#DD0031',
     title: 'Angular',
-    description: 'A powerful TypeScript-based framework for building scalable, single-page web applications.'
+    description: 'A TypeScript framework for building scalable single-page web applications.'
   },
   {
     logo: 'https://upload.wikimedia.org/wikipedia/commons/thumb/c/cf/Firebase_icon.svg/250px-Firebase_icon.svg.png',
     color: '#FFCA28',
     title: 'Firebase',
-    description: 'A backend platform providing authentication, databases, hosting, cloud functions, and analytics.'
+    description: 'A backend platform for authentication, databases, hosting, and cloud services.'
   },
   {
     logo: 'https://upload.wikimedia.org/wikipedia/commons/thumb/c/c3/Python-logo-notext.svg/250px-Python-logo-notext.svg.png',
     color: '#3776AB',
     title: 'Python',
-    description: 'A versatile programming language used for web development, automation, data science, and AI.'
+    description: 'A versatile programming language for web development, automation, and data science.'
   },
   {
     logo: 'https://upload.wikimedia.org/wikipedia/commons/thumb/d/d5/Tailwind_CSS_Logo.svg/330px-Tailwind_CSS_Logo.svg.png',
     color: '#06B6D4',
     title: 'Tailwind CSS',
-    description: 'A utility-first CSS framework for rapidly building modern, responsive user interfaces.'
+    description: 'A utility-first CSS framework for creating responsive user interfaces.'
   },
   {
     logo: 'https://upload.wikimedia.org/wikipedia/commons/thumb/9/91/Octicons-mark-github.svg/250px-Octicons-mark-github.svg.png',
     color: '#181717',
     title: 'GitHub',
-    description: 'A platform for version control, collaboration, and hosting Git repositories.'
+    description: 'A platform for hosting, managing, and collaborating on Git repositories.'
   },
   {
     logo: 'https://upload.wikimedia.org/wikipedia/commons/thumb/4/4c/Typescript_logo_2020.svg/250px-Typescript_logo_2020.svg.png',
     color: '#3178C6',
     title: 'TypeScript',
-    description: 'A strongly typed superset of JavaScript that improves code quality and developer productivity.'
+    description: 'A typed superset of JavaScript that enhances code reliability and maintainability.'
   }
 ];
 
