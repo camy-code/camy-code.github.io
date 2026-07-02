@@ -20,19 +20,19 @@ export class InfoService {
   // TODO later for pictures
   technicalSkills: Array<TechnicalSkills> = [
   {
-    logo: './assets/logos/angular.svg',
+    logo: '../../../assets/logos/angular.svg',
     color: '#DD0031',
     title: 'Angular',
     description: 'A powerful TypeScript-based framework for building scalable, single-page web applications.'
   },
   {
-    logo: 'assets/logos/firebase.svg',
+    logo: '../../../assets/logos/firebase.svg',
     color: '#FFCA28',
     title: 'Firebase',
     description: 'A backend platform providing authentication, databases, hosting, cloud functions, and analytics.'
   },
   {
-    logo: 'assets/logos/python.svg',
+    logo: '../../../assets/logos/python.svg',
     color: '#3776AB',
     title: 'Python',
     description: 'A versatile programming language used for web development, automation, data science, and AI.'
@@ -44,13 +44,13 @@ export class InfoService {
     description: 'A utility-first CSS framework for rapidly building modern, responsive user interfaces.'
   },
   {
-    logo: 'assets/logos/github.svg',
+    logo: '../../../assets/logos/github.svg',
     color: '#181717',
     title: 'GitHub',
     description: 'A platform for version control, collaboration, and hosting Git repositories.'
   },
   {
-    logo: 'assets/logos/typescript.svg',
+    logo: '../../../assets/logos/typescript.svg',
     color: '#3178C6',
     title: 'TypeScript',
     description: 'A strongly typed superset of JavaScript that improves code quality and developer productivity.'
