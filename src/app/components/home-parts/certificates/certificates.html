@@ -1,8 +1,13 @@
 <div id="certificates-section" class="mt-10">
   <h2 class="text-center">Certificates</h2>
   <h3 class="text-center">Some learning I have done</h3>
-  <div class="flex flex-row">
+  <div class="flex md:flex-row flex-col   w-3/4 max-w-[825px] mx-auto gap-10 justify-center">
     @for (item of infoArr(); track $index) {
+      <app-certificate-card [info]="item" />
+      <app-certificate-card [info]="item" />
+      <app-certificate-card [info]="item" />
+      <app-certificate-card [info]="item" />
+      <app-certificate-card [info]="item" />
       <app-certificate-card [info]="item" />
     }
   </div>
