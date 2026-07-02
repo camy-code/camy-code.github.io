@@ -67,6 +67,15 @@ export class InfoService {
     }
   ];
 
+  certificates:Array<TechnicalSkills> = [
+    {
+      logo: 'https://upload.wikimedia.org/wikipedia/commons/thumb/1/17/Warning.svg/250px-Warning.svg.png',
+      color: '#FFCA28',
+      title: 'Coming soon',
+      description: 'We are learning something new....'
+    }
+  ]
+
   getLandingPageInfo(): LandpageInterface {
     return this.landingPageInfo;
   }
@@ -77,5 +86,9 @@ export class InfoService {
 
   getProjects(): Array<ProjectInterface> {
     return this.projects;
+  }
+
+  getCertificates(): Array<TechnicalSkills> {
+    return this.certificates;
   }
 }

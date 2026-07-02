@@ -1,1 +1,9 @@
-<p>certificates works!</p>
+<div id="certificates-section" class="mt-10">
+  <h2 class="text-center">Certificates</h2>
+  <h3 class="text-center">Some learning I have done</h3>
+  <div class="flex flex-row">
+    @for (item of infoArr(); track $index) {
+      <app-certificate-card [info]="item" />
+    }
+  </div>
+</div>
