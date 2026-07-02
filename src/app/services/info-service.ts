@@ -20,37 +20,37 @@ export class InfoService {
   // TODO later for pictures
   technicalSkills: Array<TechnicalSkills> = [
   {
-    logo: '../../../assets/logos/angular.svg',
+    logo: 'https://upload.wikimedia.org/wikipedia/commons/thumb/2/2c/Angular_icon.svg/250px-Angular_icon.svg.png',
     color: '#DD0031',
     title: 'Angular',
     description: 'A powerful TypeScript-based framework for building scalable, single-page web applications.'
   },
   {
-    logo: '../../../assets/logos/firebase.svg',
+    logo: 'https://upload.wikimedia.org/wikipedia/commons/thumb/c/cf/Firebase_icon.svg/250px-Firebase_icon.svg.png',
     color: '#FFCA28',
     title: 'Firebase',
     description: 'A backend platform providing authentication, databases, hosting, cloud functions, and analytics.'
   },
   {
-    logo: '../../../assets/logos/python.svg',
+    logo: 'https://upload.wikimedia.org/wikipedia/commons/thumb/c/c3/Python-logo-notext.svg/250px-Python-logo-notext.svg.png',
     color: '#3776AB',
     title: 'Python',
     description: 'A versatile programming language used for web development, automation, data science, and AI.'
   },
   {
-    logo: 'assets/logos/tailwindcss.svg',
+    logo: 'https://upload.wikimedia.org/wikipedia/commons/thumb/d/d5/Tailwind_CSS_Logo.svg/330px-Tailwind_CSS_Logo.svg.png',
     color: '#06B6D4',
     title: 'Tailwind CSS',
     description: 'A utility-first CSS framework for rapidly building modern, responsive user interfaces.'
   },
   {
-    logo: '../../../assets/logos/github.svg',
+    logo: 'https://upload.wikimedia.org/wikipedia/commons/thumb/9/91/Octicons-mark-github.svg/250px-Octicons-mark-github.svg.png',
     color: '#181717',
     title: 'GitHub',
     description: 'A platform for version control, collaboration, and hosting Git repositories.'
   },
   {
-    logo: '../../../assets/logos/typescript.svg',
+    logo: 'https://upload.wikimedia.org/wikipedia/commons/thumb/4/4c/Typescript_logo_2020.svg/250px-Typescript_logo_2020.svg.png',
     color: '#3178C6',
     title: 'TypeScript',
     description: 'A strongly typed superset of JavaScript that improves code quality and developer productivity.'
