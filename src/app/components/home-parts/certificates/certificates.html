@@ -1,14 +1,12 @@
 <div id="certificates-section" class="mt-10">
   <h2 class="text-center">Certificates</h2>
   <h3 class="text-center">Some learning I have done</h3>
-  <div class="flex md:flex-row flex-col   w-3/4 max-w-[825px] mx-auto gap-10 justify-center">
+  <div class="flex md:flex-row flex-col   w-3/4 max-w-[825px] mx-auto gap-4 justify-center mt-3">
     @for (item of infoArr(); track $index) {
       <app-certificate-card [info]="item" />
-      <app-certificate-card [info]="item" />
-      <app-certificate-card [info]="item" />
-      <app-certificate-card [info]="item" />
-      <app-certificate-card [info]="item" />
-      <app-certificate-card [info]="item" />
+
+   
     }
+    <!-- TODO if you have more then 3 certs then you will have to repeat the above for loop so things are clean -->
   </div>
 </div>

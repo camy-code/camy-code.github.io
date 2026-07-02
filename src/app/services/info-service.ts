@@ -69,7 +69,7 @@ export class InfoService {
 
   certificates:Array<TechnicalSkills> = [
     {
-      logo: 'https://upload.wikimedia.org/wikipedia/commons/thumb/1/17/Warning.svg/250px-Warning.svg.png',
+      logo: './../../assets/coding.svg',
       color: '#FFCA28',
       title: 'Coming soon',
       description: 'We are learning something new....'
