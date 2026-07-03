@@ -1,1 +1,19 @@
-<p>contact-card works!</p>
+<div>
+    <form class="w-3/4 max-w-[825px] border-1 p-3">
+        <div id="grid">
+        <input type="text" [placeholder]="placeHolderValues.fullName" >
+        <input type="text" [placeholder]="placeHolderValues.email" >
+<select id="countries" class="block w-full px-3 py-2.5 bg-neutral-secondary-medium border border-default-medium text-heading text-sm rounded-base focus:ring-brand  shadow-xs ">
+    <option selected [value]="subjectOption[0].value" >{{subjectOption[0].text}}</option>
+    
+   @for (item of subjectOption.slice(1); track $index) {
+     <option selected [value]="item.value" >{{item.text}}</option>
+   }
+  </select>
+        @if (false) {
+            <input type="text" [placeholder]="placeHolderValues.Other" >
+        }
+        <textarea class="w-full" [placeholder]="placeHolderValues.message[0]"></textarea>
+        </div>
+    </form>
+</div>
