@@ -1,5 +1,9 @@
 import { Component } from '@angular/core';
 import { ContactInterface } from '../../interfaces/contact-interface';
+
+import {FormGroup, FormControl} from "@angular/forms"
+import {ReactiveFormsModule} from '@angular/forms';
+
 @Component({
   selector: 'app-contact-card',
   imports: [],
@@ -28,5 +32,19 @@ export class ContactCard {
       "Tell me about what you would like to learn.",
       "Elaborate on your the subject here."
     ]
+    }
+
+    contactForm = new FormGroup({
+      fullName:new FormControl(''),
+      email:new FormControl(''),
+      Subject:new FormControl('red river red river'),
+      Other:new FormControl(''),
+      message:new FormControl('')
+    });
+
+    onSubmit():void {
+      console.log("Here is the form value");
+      // TODO
+      console.log(this.contactForm.value);
     }
 }
