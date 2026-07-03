@@ -1,19 +1,23 @@
 <div>
-    <form class="w-3/4 max-w-[825px] border-1 p-3">
-        <div id="grid">
-        <input type="text" [placeholder]="placeHolderValues.fullName" >
-        <input type="text" [placeholder]="placeHolderValues.email" >
-<select id="countries" class="block w-full px-3 py-2.5 bg-neutral-secondary-medium border border-default-medium text-heading text-sm rounded-base focus:ring-brand  shadow-xs ">
-    <option selected [value]="subjectOption[0].value" >{{subjectOption[0].text}}</option>
-    
-   @for (item of subjectOption.slice(1); track $index) {
-     <option selected [value]="item.value" >{{item.text}}</option>
-   }
-  </select>
-        @if (false) {
-            <input type="text" [placeholder]="placeHolderValues.Other" >
+  <form class="w-3/4 max-w-[825px] border-1 p-3 mx-auto bg-gray-100 rounded-xl">
+    <div class="grid grid-cols-2 gap-3">
+      <input class="col-span-1 border-1 px-3 py-2.5 text-sm" type="text" [placeholder]="placeHolderValues.fullName" />
+      <input class="col-span-1 border-1 px-3 py-2.5 text-sm" type="text" [placeholder]="placeHolderValues.email" />
+      <select
+        id="countries"
+        class="col-span-2 block w-full px-3 py-2.5 bg-neutral-secondary-medium border border-default-medium text-heading text-sm rounded-base focus:ring-brand shadow-xs"
+      >
+        <option selected [value]="subjectOption[0].value">{{ subjectOption[0].text }}</option>
+
+        @for (item of subjectOption.slice(1); track $index) {
+          <option selected [value]="item.value">{{ item.text }}</option>
         }
-        <textarea class="w-full" [placeholder]="placeHolderValues.message[0]"></textarea>
-        </div>
-    </form>
+      </select>
+      @if (false) {
+        <input class="col-span-2 border-1 px-3 py-2.5" type="text" [placeholder]="placeHolderValues.Other" />
+      }
+      <textarea rows="4" class="w-full col-span-2 border-1 px-3 py-2.5" [placeholder]="placeHolderValues.message[0]"></textarea>
+    </div>
+  </form>
 </div>
+<!-- TODO: make this work on phone -->
