@@ -1,8 +1,10 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import { ContactInterface } from '../../interfaces/contact-interface';
 
 import {FormGroup, FormControl} from "@angular/forms"
 import {ReactiveFormsModule} from '@angular/forms';
+
+import { FormService } from '../../services/form-service';
 
 @Component({
   selector: 'app-contact-card',
@@ -11,11 +13,8 @@ import {ReactiveFormsModule} from '@angular/forms';
   styleUrl: './contact-card.css',
 })
 export class ContactCard {
-    //   fullName:string,
-    // email:string,
-    // Subject:string,
-    // Other?:string,
-    // message:string
+    formService = inject(FormService);
+
     subjectOption = [
       {"text": "Select an option", value:null},
       {"text":"Freelance Project", value:"project"},
@@ -42,9 +41,24 @@ export class ContactCard {
       message:new FormControl('')
     });
 
-    onSubmit():void {
-      console.log("Here is the form value");
-      // TODO
-      console.log(this.contactForm.value);
+    onSubmit(): void {
+      // TODO: check if the data is clean
+      const contactValues: ContactInterface = {
+        fullName: this.contactForm.value.fullName ?? '',
+        email: this.contactForm.value.email ?? '',
+        Subject: this.contactForm.value.Subject ?? '',
+        Other: this.contactForm.value.Other ?? '',
+        message: this.contactForm.value.message ?? ''
+      };
+
+      // Data cleaning
+
+      let form_status: boolean = this.formService.sendMessage(contactValues);
+      if (form_status) { // a successful send
+        // TODO
+      } else { // an error send
+          // TODO
+      }
+
     }
 }
