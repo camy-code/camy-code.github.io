@@ -4,11 +4,12 @@ import { ContactInterface } from '../../interfaces/contact-interface';
 import {FormGroup, FormControl} from "@angular/forms"
 import {ReactiveFormsModule} from '@angular/forms';
 
+
 import { FormService } from '../../services/form-service';
 
 @Component({
   selector: 'app-contact-card',
-  imports: [],
+  imports: [ReactiveFormsModule],
   templateUrl: './contact-card.html',
   styleUrl: './contact-card.css',
 })
@@ -36,11 +37,13 @@ export class ContactCard {
     contactForm = new FormGroup({
       fullName:new FormControl(''),
       email:new FormControl(''),
-      Subject:new FormControl('red river red river'),
+      Subject:new FormControl(null),
       Other:new FormControl(''),
       message:new FormControl('')
     });
 
+    
+    
     onSubmit(): void {
       // TODO: check if the data is clean
       const contactValues: ContactInterface = {
@@ -50,6 +53,8 @@ export class ContactCard {
         Other: this.contactForm.value.Other ?? '',
         message: this.contactForm.value.message ?? ''
       };
+
+      console.log("Contact Values: ", contactValues);
 
       // Data cleaning
 
