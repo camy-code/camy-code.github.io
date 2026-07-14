@@ -4,16 +4,19 @@ import { ContactInterface } from '../../interfaces/contact-interface';
 import {FormGroup, FormControl} from "@angular/forms"
 import {ReactiveFormsModule} from '@angular/forms';
 
+import { NgClass } from '@angular/common';
 
 import { FormService } from '../../services/form-service';
 
 @Component({
   selector: 'app-contact-card',
-  imports: [ReactiveFormsModule],
+  imports: [ReactiveFormsModule, NgClass],
   templateUrl: './contact-card.html',
   styleUrl: './contact-card.css',
 })
 export class ContactCard {
+  error_message: string = 'Some sample error message';
+
     formService = inject(FormService);
 
     subjectOption = [

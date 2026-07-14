@@ -1,5 +1,13 @@
 <div>
   <form  [formGroup]="contactForm" class="w-3/4 max-w-[600px] border-1 p-3 mx-auto bg-gray-100 rounded-xl">
+    <div>
+      <h5 [ngClass]="{
+        'text-center pb-5':true,
+        'bg-red-100':true,
+        'bg-blue-100':false,
+      }">{{error_message}}</h5>
+      <!-- TIL that this is simpler for conditional -->
+    </div>
     <div class="grid grid-cols-2 gap-3">
       <input  class="md:col-span-1 col-span-2 border-1 px-3 py-2.5 text-sm" type="text" [placeholder]="placeHolderValues.fullName" formControlName="fullName"/>
       <input  class="md:col-span-1 col-span-2 border-1 px-3 py-2.5 text-sm" type="text" [placeholder]="placeHolderValues.email" formControlName="email"/>
