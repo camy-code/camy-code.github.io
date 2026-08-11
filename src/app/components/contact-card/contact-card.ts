@@ -41,7 +41,6 @@ export class ContactCard {
       fullName:new FormControl(''),
       email:new FormControl(''),
       Subject:new FormControl(null),
-      Other:new FormControl(''),
       message:new FormControl('')
     });
 
@@ -53,7 +52,6 @@ export class ContactCard {
         fullName: this.contactForm.value.fullName ?? '',
         email: this.contactForm.value.email ?? '',
         Subject: this.contactForm.value.Subject ?? '',
-        Other: this.contactForm.value.Other ?? '',
         message: this.contactForm.value.message ?? ''
       };
 
