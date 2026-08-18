@@ -15,7 +15,8 @@ import { FormService } from '../../services/form-service';
   styleUrl: './contact-card.css',
 })
 export class ContactCard {
-  error_message: string = 'Some sample error message';
+  error_message: string = '';
+  has_error: boolean = (this.error_message !== "") ? true : false;
 
     formService = inject(FormService);
 
