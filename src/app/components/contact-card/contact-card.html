@@ -4,7 +4,7 @@
       <h5 [ngClass]="{
         'text-center mb-3':true,
         'bg-red-100 ':has_error,
-        'invisible bg-blue-100':!has_error,
+        'invisible':!has_error,
       }">{{has_error ? error_message: "no error"}}</h5>
       <!-- TIL that this is simpler for conditional -->
     </div>

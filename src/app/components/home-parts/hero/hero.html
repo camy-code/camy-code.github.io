@@ -1,6 +1,6 @@
 <div class=" pb-30" id="hero-section">
     <!-- Can change colour here -->
-  <div class="flex flex-row justify-center p-6 md:w-3/4 sm:w-1/1 mx-auto gap-1">
+  <div class="flex md:flex-row flex-col justify-center p-6 md:w-3/4 sm:w-1/1 mx-auto gap-1">
     <div class="flex flex-col gap-0">
       <h3 class="">{{ info().greeting }}</h3>
       <h2>{{ info().title }}</h2>
@@ -8,12 +8,12 @@
       <div>
         <button>Contact</button>
       </div>
-      <div class="flex flex-row gap-2">
+      <div class="flex flex-row gap-2 md:mx-0 mx-auto mt-4">
         @for (item of icons; track $index) {
           <div>{{ item.name }}</div>
         }
       </div>
     </div>
-    <img [src]="info().imgURL" [alt]="info().altIMG" class="h-auto w-50 rounded-xl" />
+    <img [src]="info().imgURL" [alt]="info().altIMG" class="h-auto w-50 rounded-xl mx-auto" />
   </div>
 </div>

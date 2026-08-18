@@ -1,1 +1,18 @@
-<p>navbar works!</p>
+<div id="nav-container" class="bg-red-100">
+    <div class="flex flex-row justify-between items-center p-4 md:w-3/4  mx-auto p-6">
+        <div class="flex flex-row gap-2">
+        
+        <h1 class="text-lg font-bold">Cam W</h1>
+        </div>
+        <div class="flex flex-row gap-4">
+            @if (isMobile()) {
+                <h2>MOBILE</h2>
+            } @else {
+        <a href="#hero-section" class="hover:text-blue-500">Home</a>
+        <a href="#about-section" class="hover:text-blue-500">About</a>
+        <a href="#projects-section" class="hover:text-blue-500">Projects</a>
+        <a href="#contact-section" class="hover:text-blue-500">Contact</a>
+            }
+        </div>
+    </div>
+</div>
