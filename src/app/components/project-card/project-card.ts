@@ -15,7 +15,7 @@ export class ProjectCard {
   info = input.required<ProjectInterface>();
 
   isHovered = false; // could use a signal here later if u wanted to refactor
-  baseCardCSS = " relative flex flex-row w-3/4 rounded-xl border-2 mx-auto";
+  baseCardCSS = " relative flex flex-row w-3/4  max-w-[825px] rounded-xl border-2 mx-auto";
 
   onHover(state:boolean):void {
     this.isHovered = state;

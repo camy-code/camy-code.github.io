@@ -15,7 +15,7 @@ export class TechnicalSkillCard {
     this.isHovered = state;
   }
 
-  baseCardCSS ="flex flex-row w-[400px] h-[100px] rounded-xl border-1";
+  baseCardCSS ="flex flex-row w-[385px] h-[100px] rounded-xl border-1";
   hoveredCSS = this.baseCardCSS + " bg-gray-100"
   regularCSS = this.baseCardCSS + " bg-white"
 }
