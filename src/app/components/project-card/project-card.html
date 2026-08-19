@@ -1,17 +1,21 @@
-
-<div id="card" [class]= "(isHovered ? 'bg-gray-100' : 'bg-white') + baseCardCSS"  (mouseenter)="onHover(true)" (mouseleave)="onHover(false)">
-    <img [src]="info().imgURL" [alt]="info().altIMG" class="w-[50%]  rounded-xl p-1"/>
-    <div id="word" class="flex flex-col pl-5 w-[45%] grow">
-        <h3 class="text-center">{{info().title}}</h3>
-        <p>{{info().desc}}</p>
-        <div id="tech_part" class="flex flex-row gap-1">
-            @for (item of info().techUsed; track $index) {
-                {{item.title}}
-            }
-        </div>
-        @if (isHovered) {<p class="text-blue-500 underline">View Demo</p>}
-        <!-- TODO make this better -->
+<div
+  id="card"
+  [class]="(isHovered ? 'bg-gray-100' : 'bg-white') + baseCardCSS"
+  (mouseenter)="onHover(true)"
+  (mouseleave)="onHover(false)"
+>
+  <img [src]="info().imgURL" [alt]="info().altIMG" class="w-[50%] rounded-xl p-1" />
+  <div id="word" class="flex flex-col pl-5 w-[45%] grow">
+    <h3 class="text-center">{{ info().title }}</h3>
+    <p>{{ info().desc }}</p>
+    <div id="tech_part" class="flex flex-row gap-1">
+      @for (item of info().techUsed; track $index) {
+        {{ item.title }}
+      }
     </div>
-    
+    <p 
+    class="text-blue-500 underline" 
+    [ngClass]="{'invisible':!isHovered}">View Demo</p>
+    <!-- TODO make this better -->
+  </div>
 </div>
-
