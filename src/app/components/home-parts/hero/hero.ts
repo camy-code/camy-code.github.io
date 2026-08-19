@@ -4,9 +4,11 @@ import { ColorService } from '../../../services/color-service';
 
 import { LandpageInterface } from '../../../interfaces/landpage-interface';
 
+import { GithubLOGO } from '../../github-logo/github-logo';
+
 @Component({
   selector: 'app-hero',
-  imports: [],
+  imports: [GithubLOGO],
   templateUrl: './hero.html',
   styleUrl: './hero.css',
 })

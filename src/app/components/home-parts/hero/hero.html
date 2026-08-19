@@ -10,8 +10,22 @@
       </div>
       <div class="flex flex-row gap-2 md:mx-0 mx-auto mt-4">
         @for (item of icons; track $index) {
-          <div>{{ item.name }}</div>
+          <div>
+            @if (item.name == 'git') {
+              <div class="w-15 h-15 text-black hover:text-orange-500">
+              <a href="https://github.com/camy-code" target="_blank">
+               <app-github-logo/>
+              </a>
+              </div>
+              
+            } @else if (item.name == 'email') {
+              <a href="mailto:cameron.warburton@gmail.com">
+                <h1>Email</h1>
+              </a>
+            }
+          </div>
         }
+      
       </div>
     </div>
     <img [src]="info().imgURL" [alt]="info().altIMG" class="h-auto w-50 rounded-xl mx-auto" />
