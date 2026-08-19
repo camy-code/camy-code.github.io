@@ -16,7 +16,7 @@ export class Navbar {
   isMenuOpen = signal(false);
 
   menuItems: Array<MenuInterface> = [
-    { title: 'Home', link: '#nav-container'}, 
+    { title: 'Home', link: '#hero-section'}, 
     { title: 'Projects', link: '#project-section' },
     { title: 'Technical skills', link: '#techskill-section' },
     {title: 'Certificates', link: '#certificates-section'},
