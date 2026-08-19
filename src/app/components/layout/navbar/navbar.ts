@@ -1,6 +1,6 @@
 import { Component, inject, signal } from '@angular/core';
 import { BreakpointObserver, Breakpoints } from '@angular/cdk/layout';
-
+import {NgClass} from '@angular/common';
 import { MenuInterface } from '../../../interfaces/menu-interface';
 
 @Component({
