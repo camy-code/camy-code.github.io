@@ -1,13 +1,19 @@
-<div id="nav-container" class="bg-red-100">
+<div id="nav-container" class="bg-blue-400">
     <div class="flex flex-row justify-between items-center p-4 md:w-3/4  mx-auto p-6">
         <div class="flex flex-row gap-2">
         
-        <h1 class="text-lg font-bold">Cam W</h1>
+        <h1 class="text-lg font-bold text-white">Cam W</h1>
         </div>
         <div class="flex flex-row gap-4">
             @if (isMobile()) {
-                <h2>MOBILE</h2>
+                <svg (click)="isMenuOpen.set(!isMenuOpen())" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6 text-white cursor-pointer">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
+                </svg>
+                @if (isMenuOpen()) {
+                    <h1>OPEN</h1>
+                }
             } @else {
+                {{isMenuOpen.set(false)}} 
         <a href="#hero-section" class="hover:text-blue-500">Home</a>
         <a href="#about-section" class="hover:text-blue-500">About</a>
         <a href="#projects-section" class="hover:text-blue-500">Projects</a>

@@ -1,6 +1,7 @@
 import { Component, inject, signal } from '@angular/core';
-
 import { BreakpointObserver, Breakpoints } from '@angular/cdk/layout';
+
+
 
 @Component({
   selector: 'app-navbar',
@@ -11,7 +12,8 @@ import { BreakpointObserver, Breakpoints } from '@angular/cdk/layout';
 export class Navbar {
   private breakpointObserver = inject(BreakpointObserver)
 
-  isMobile = signal(false)
+  isMobile = signal(false);
+  isMenuOpen = signal(false);
 
   constructor() {
      this.breakpointObserver.observe([Breakpoints.Handset]).subscribe(result => {
