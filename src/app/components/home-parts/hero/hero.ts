@@ -5,10 +5,11 @@ import { ColorService } from '../../../services/color-service';
 import { LandpageInterface } from '../../../interfaces/landpage-interface';
 
 import { GithubLOGO } from '../../github-logo/github-logo';
+import { EmailLOGO } from '../../email-logo/email-logo';
 
 @Component({
   selector: 'app-hero',
-  imports: [GithubLOGO],
+  imports: [GithubLOGO, EmailLOGO],
   templateUrl: './hero.html',
   styleUrl: './hero.css',
 })
