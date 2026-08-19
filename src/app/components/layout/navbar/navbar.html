@@ -26,14 +26,14 @@
             class="bg-blue-400 p-4 rounded shadow-lg flex flex-col items-end gap-2  w-1/2 absolute top-16 right-0 z-50"
           >
             @for (item of menuItems; track $index) {
-              <a [href]="item.link" class="hover:text-blue-500 mx-auto" >{{ item.title }}</a>
+              <a [href]="item.link" class="text-white hover:text-black mx-auto" >{{ item.title }}</a>
             }
           </div>
         }
         <!-- Desktop view -->
       } @else { 
         @for (item of menuItems; track $index) {
-          <a [href]="item.link" class="hover:text-blue-500">{{ item.title }}</a>
+          <a [href]="item.link" class="text-white hover:text-black">{{ item.title }}</a>
         }
       }
     </div>
