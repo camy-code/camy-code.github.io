@@ -10,14 +10,22 @@
                     <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
                 </svg>
                 @if (isMenuOpen()) {
-                    <h1>OPEN</h1>
+                    <div class="absolute top-16 right-4 bg-blue-400 p-4 rounded shadow-lg flex flex-col gap-2">
+                        <a href="#hero-section" class="hover:text-blue-500">Home</a>
+                        <a href="#about-section" class="hover:text-blue-500">About</a>
+                        <a href="#projects-section" class="hover:text-blue-500">Projects</a>
+                        <a href="#contact-section" class="hover:text-blue-500">Contact</a>
+
+                    </div>
                 }
             } @else {
-                {{isMenuOpen.set(false)}} 
-        <a href="#hero-section" class="hover:text-blue-500">Home</a>
+                @for (item of menuItems; track $index) {
+                   <a [href]="item.link" class="hover:text-blue-500">{{item.title}}</a> 
+                }
+        <!-- <a href="#hero-section" class="hover:text-blue-500">Home</a>
         <a href="#about-section" class="hover:text-blue-500">About</a>
         <a href="#projects-section" class="hover:text-blue-500">Projects</a>
-        <a href="#contact-section" class="hover:text-blue-500">Contact</a>
+        <a href="#contact-section" class="hover:text-blue-500">Contact</a> -->
             }
         </div>
     </div>

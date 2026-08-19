@@ -1,7 +1,7 @@
 import { Component, inject, signal } from '@angular/core';
 import { BreakpointObserver, Breakpoints } from '@angular/cdk/layout';
 
-
+import { MenuInterface } from '../../../interfaces/menu-interface';
 
 @Component({
   selector: 'app-navbar',
@@ -10,15 +10,24 @@ import { BreakpointObserver, Breakpoints } from '@angular/cdk/layout';
   styleUrl: './navbar.css',
 })
 export class Navbar {
-  private breakpointObserver = inject(BreakpointObserver)
+  private breakpointObserver = inject(BreakpointObserver);
 
   isMobile = signal(false);
   isMenuOpen = signal(false);
 
+  menuItems: Array<MenuInterface> = [
+    { title: 'Home', link: '#nav-container'}, 
+    { title: 'Projects', link: '#project-section' },
+    { title: 'Technical skills', link: '#techskill-section' },
+    {title: 'Certificates', link: '#certificates-section'},
+    { title: 'Contact', link: '#contact-section' },
+  ];
+
   constructor() {
-     this.breakpointObserver.observe([Breakpoints.Handset]).subscribe(result => {
+    this.breakpointObserver.observe([Breakpoints.Handset]).subscribe((result) => {
       // Update signal when screen size crosses threshold
       this.isMobile.set(result.matches);
+      this.isMenuOpen.set(false); // Close menu when switching to mobile view
     });
   }
 }
