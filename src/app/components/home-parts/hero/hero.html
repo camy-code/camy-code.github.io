@@ -9,24 +9,29 @@
         <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded" href="#contact-section">Contact me!</button>
       </div>
       <div class="flex flex-row gap-4 md:mx-0 mx-auto mt-2">
-        @for (item of icons; track $index) {
-          <div>
-            @if (item.name == 'git') {
+   
+       
+        
               <div class="w-15 h-15 text-black hover:text-orange-500">
               <a href="https://github.com/camy-code" target="_blank">
                <app-github-logo/>
               </a>
               </div>
               
-            } @else if (item.name == 'email') {
+            
               <div class="w-15 h-15 text-black hover:text-blue-500">
               <a href="" >
                 <app-email-logo/>
               </a>
               </div>
-            }
-          </div>
-        }
+
+               <div class="w-15 h-15 text-black hover:text-blue-500">
+              <a href="" >
+                <app-linkdin-logo/>
+              </a>
+              </div>
+
+        
       
       </div>
     </div>

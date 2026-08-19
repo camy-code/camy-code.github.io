@@ -6,10 +6,11 @@ import { LandpageInterface } from '../../../interfaces/landpage-interface';
 
 import { GithubLOGO } from '../../logos/github-logo/github-logo';
 import { EmailLOGO } from '../../logos/email-logo/email-logo';
+import { LinkdinLOGO } from "../../logos/linkdin-logo/linkdin-logo";
 
 @Component({
   selector: 'app-hero',
-  imports: [GithubLOGO, EmailLOGO],
+  imports: [GithubLOGO, EmailLOGO, LinkdinLOGO],
   templateUrl: './hero.html',
   styleUrl: './hero.css',
 })
