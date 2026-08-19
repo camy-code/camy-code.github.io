@@ -60,7 +60,7 @@ export class InfoService {
     {
       imgURL: 'https://upload.wikimedia.org/wikipedia/commons/thumb/d/d5/Tailwind_CSS_Logo.svg/960px-Tailwind_CSS_Logo.svg.png',
        altIMG: 'Tailwind logo to change later',
-      demoURL: 'DO THIS LATER OR ELSE!',
+      demoURL: 'https://www.google.com/?client=safari',
       title: 'Coming soon',
       desc: 'Coming soon Coming soon Coming soon Coming soon Coming soon Coming soon Coming soon Coming soon',
       techUsed: [this.technicalSkills[0], this.technicalSkills[1]]

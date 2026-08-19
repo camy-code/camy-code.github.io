@@ -3,6 +3,7 @@
   [class]="(isHovered ? 'bg-gray-100' : 'bg-white') + baseCardCSS"
   (mouseenter)="onHover(true)"
   (mouseleave)="onHover(false)"
+ 
 >
   <img [src]="info().imgURL" [alt]="info().altIMG" class="w-[50%] rounded-xl p-1" />
   <div id="word" class="flex flex-col pl-5 w-[45%] grow">
@@ -15,7 +16,7 @@
     </div>
     <p 
     class="text-blue-500 underline" 
-    [ngClass]="{'invisible':!isHovered}">View Demo</p>
+    [ngClass]="{'invisible':!isHovered}"> <a [href]="info().demoURL" target="_blank">View Demo</a></p>
     <!-- TODO make this better -->
   </div>
 </div>
