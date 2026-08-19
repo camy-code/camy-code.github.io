@@ -8,6 +8,8 @@ import { NgClass } from '@angular/common';
 
 import { FormService } from '../../services/form-service';
 
+import { signal } from '@angular/core';
+
 @Component({
   selector: 'app-contact-card',
   imports: [ReactiveFormsModule, NgClass],
@@ -15,8 +17,14 @@ import { FormService } from '../../services/form-service';
   styleUrl: './contact-card.css',
 })
 export class ContactCard {
-  error_message: string = '';
-  has_error: boolean = (this.error_message !== "") ? true : false;
+  error_message = signal("");
+has_error = signal(false)
+
+// This is to flag which fields need work
+name_check = signal(true);
+email_check = signal(true);
+option_check = signal(true);
+msg_check = signal(true);
 
     formService = inject(FormService);
 
@@ -52,7 +60,7 @@ export class ContactCard {
       const contactValues: ContactInterface = {
         fullName: this.contactForm.value.fullName ?? '',
         email: this.contactForm.value.email ?? '',
-        Subject: this.contactForm.value.Subject ?? '',
+        Subject: this.contactForm.value.Subject ?? 'null',
         message: this.contactForm.value.message ?? ''
       };
 

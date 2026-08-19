@@ -17,9 +17,9 @@ import { NgComponentOutlet } from '@angular/common';
 export class Footer {
 
  logoIcons = [
-    {name:"git", logo: GithubLOGO},
-    {name:"email", logo: EmailLOGO},
-    {name:"linkdin", logo: LinkdinLOGO}
+    {name:"git", logo: GithubLOGO, link:"https://github.com/camy-code"},
+    {name:"email", logo: EmailLOGO, link:"mailto:camlikestea@gmail.com"},
+    {name:"linkdin", logo: LinkdinLOGO, link:"https://www.linkedin.com/in/camden-warburton-1bbb66333/"},
   ];
 
 
