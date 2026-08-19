@@ -4,8 +4,8 @@ import { ColorService } from '../../../services/color-service';
 
 import { LandpageInterface } from '../../../interfaces/landpage-interface';
 
-import { GithubLOGO } from '../../github-logo/github-logo';
-import { EmailLOGO } from '../../email-logo/email-logo';
+import { GithubLOGO } from '../../logos/github-logo/github-logo';
+import { EmailLOGO } from '../../logos/email-logo/email-logo';
 
 @Component({
   selector: 'app-hero',
