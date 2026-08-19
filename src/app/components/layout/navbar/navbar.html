@@ -1,32 +1,41 @@
 <div id="nav-container" class="bg-blue-400">
-    <div class="flex flex-row justify-between items-center p-4 md:w-3/4  mx-auto p-6">
-        <div class="flex flex-row gap-2">
-        
-        <h1 class="text-lg font-bold text-white">Cam W</h1>
-        </div>
-        <div class="flex flex-row gap-4">
-            @if (isMobile()) {
-                <svg (click)="isMenuOpen.set(!isMenuOpen())" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6 text-white cursor-pointer">
-                    <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
-                </svg>
-                @if (isMenuOpen()) {
-                    <div class="absolute top-16 right-4 bg-blue-400 p-4 rounded shadow-lg flex flex-col gap-2">
-                        <a href="#hero-section" class="hover:text-blue-500">Home</a>
-                        <a href="#about-section" class="hover:text-blue-500">About</a>
-                        <a href="#projects-section" class="hover:text-blue-500">Projects</a>
-                        <a href="#contact-section" class="hover:text-blue-500">Contact</a>
-
-                    </div>
-                }
-            } @else {
-                @for (item of menuItems; track $index) {
-                   <a [href]="item.link" class="hover:text-blue-500">{{item.title}}</a> 
-                }
-        <!-- <a href="#hero-section" class="hover:text-blue-500">Home</a>
-        <a href="#about-section" class="hover:text-blue-500">About</a>
-        <a href="#projects-section" class="hover:text-blue-500">Projects</a>
-        <a href="#contact-section" class="hover:text-blue-500">Contact</a> -->
-            }
-        </div>
+  <div class="flex flex-row justify-between items-center p-4 md:w-3/4 mx-auto p-6">
+    <div class="flex flex-row gap-2">
+      <h1 class="text-lg font-bold text-white">Cam W</h1>
     </div>
+    <div class="flex flex-row gap-4">
+        <!-- Mobile view -->
+      @if (isMobile()) {
+        <svg
+          (click)="isMenuOpen.set(!isMenuOpen())"
+          xmlns="http://www.w3.org/2000/svg"
+          fill="none"
+          viewBox="0 0 24 24"
+          stroke-width="1.5"
+          stroke="currentColor"
+          class="w-6 h-6 text-white cursor-pointer"
+        >
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5"
+          />
+        </svg>
+        @if (isMenuOpen()) {
+          <div
+            class="bg-blue-400 p-4 rounded shadow-lg flex flex-col gap-2"
+          >
+            @for (item of menuItems; track $index) {
+              <a [href]="item.link" class="hover:text-blue-500">{{ item.title }}</a>
+            }
+          </div>
+        }
+        <!-- Desktop view -->
+      } @else { 
+        @for (item of menuItems; track $index) {
+          <a [href]="item.link" class="hover:text-blue-500">{{ item.title }}</a>
+        }
+      }
+    </div>
+  </div>
 </div>
