@@ -1,20 +1,26 @@
 import { Component } from '@angular/core';
 import { MenuInterface } from '../../../interfaces/menu-interface';
 
+// Logo imports
+import { GithubLOGO } from '../../logos/github-logo/github-logo';
+import { EmailLOGO } from '../../logos/email-logo/email-logo';
+import { LinkdinLOGO } from "../../logos/linkdin-logo/linkdin-logo";
+
+import { NgComponentOutlet } from '@angular/common';
 
 @Component({
   selector: 'app-footer',
-  imports: [],
+  imports: [NgComponentOutlet],
   templateUrl: './footer.html',
   styleUrl: './footer.css',
 })
 export class Footer {
 
-   menuItems: Array<MenuInterface> = [
-      { title: 'Home', link: '#hero-section'}, 
-      { title: 'Projects', link: '#project-section' },
-      { title: 'Technical skills', link: '#techskill-section' },
-      {title: 'Certificates', link: '#certificates-section'},
-      { title: 'Contact', link: '#contact-section' },
-    ];
+ logoIcons = [
+    {name:"git", logo: GithubLOGO},
+    {name:"email", logo: EmailLOGO},
+    {name:"linkdin", logo: LinkdinLOGO}
+  ];
+
+
 }

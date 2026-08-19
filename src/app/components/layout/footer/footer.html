@@ -1,14 +1,16 @@
 <div id="footer-container" class="w-full bg-blue-400 text-white py-4">
- 
-    <div class="flex flex-col w-3/4 max-w-[825px] mx-auto">
-        <hr class="w-1/1">
-        <div class="flex flex-row gap-3 items-center mx-auto">
-        <h1>Cam W</h1>
-        <h1>Cam W</h1>
-        <h1>Cam W</h1>    
+  <div class="flex flex-col w-3/4 max-w-[825px] mx-auto">
+    <hr class="w-1/1" />
+    <div class="flex flex-row gap-3 items-center mx-auto m-3">
+      <h1 class="text-center">©Cam W. 2026</h1>
+      @for (item of logoIcons; track $index) {
+        <div class="w-5 h-5 text-white hover:text-black">
+          <a href="#">
+            <ng-container *ngComponentOutlet="item.logo"></ng-container>
+          </a>
         </div>
-        <h1 class="text-center">©Cam W. 2026</h1>
+      }
     </div>
-    
-
+    <!-- <hr class="w-1/1" /> -->
+  </div>
 </div>
