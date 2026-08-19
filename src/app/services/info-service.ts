@@ -48,12 +48,12 @@ export class InfoService {
     title: 'GitHub',
     description: 'A platform for hosting, managing, and collaborating on Git repositories.'
   },
-  {
-    logo: 'https://upload.wikimedia.org/wikipedia/commons/thumb/4/4c/Typescript_logo_2020.svg/250px-Typescript_logo_2020.svg.png',
-    color: '#3178C6',
-    title: 'TypeScript',
-    description: 'A typed superset of JavaScript that enhances code reliability and maintainability.'
-  }
+  // {
+  //   logo: 'https://upload.wikimedia.org/wikipedia/commons/thumb/4/4c/Typescript_logo_2020.svg/250px-Typescript_logo_2020.svg.png',
+  //   color: '#3178C6',
+  //   title: 'TypeScript',
+  //   description: 'A typed superset of JavaScript that enhances code reliability and maintainability.'
+  // }
 ];
 
   projects: Array<ProjectInterface> = [
