@@ -9,13 +9,13 @@
       
     </div>
     <div class="grid grid-cols-2 gap-3">
-      <input  class="md:col-span-1 col-span-2 border-1 px-3 py-2.5 text-sm" type="text" [placeholder]="placeHolderValues.fullName" formControlName="fullName"/>
-      <input  class="md:col-span-1 col-span-2 border-1 px-3 py-2.5 text-sm" type="text" [placeholder]="placeHolderValues.email" formControlName="email"/>
+      <input  [ngClass]="{'bg-red-100':name_check(), 'bg-white':!name_check()}" class="md:col-span-1 col-span-2 border-1 px-3 py-2.5 text-sm" type="text" [placeholder]="placeHolderValues.fullName" formControlName="fullName"/>
+      <input  [ngClass]="{'bg-red-100':email_check(), 'bg-white':!email_check()}" class="md:col-span-1 col-span-2 border-1 px-3 py-2.5 text-sm" type="text" [placeholder]="placeHolderValues.email" formControlName="email"/>
       <select
         id="options"
         class="col-span-2 block w-full px-3 py-2.5 bg-neutral-secondary-medium border border-default-medium text-heading text-sm rounded-base focus:ring-brand shadow-xs"
         formControlName="Subject"
-      
+        [ngClass]="{'bg-red-100':option_check(), 'bg-white':!option_check()}"
       >
         <option selected [value]="subjectOption[0].value">{{ subjectOption[0].text }}</option>
 
@@ -24,8 +24,8 @@
         }
       </select>
       
-      <textarea rows="4" class="resize-none  w-full col-span-2 border-1 px-3 py-2.5" [placeholder]="placeHolderValues.message[0]" formControlName="message" ></textarea>
-      <button class="col-span-2 bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded" (click)="onSubmit()" type="button">
+      <textarea [ngClass]="{'bg-red-100':msg_check(), 'bg-white':!msg_check()}" rows="4" class="resize-none  w-full col-span-2 border-1 px-3 py-2.5" [placeholder]="placeHolderValues.message[0]" formControlName="message" ></textarea>
+      <button class="col-span-2 bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded" (click)="onSubmit()" type="button" [disabled]="contactForm.invalid">
         Submit
       </button>
     </div>
