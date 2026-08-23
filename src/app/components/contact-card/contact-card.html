@@ -6,37 +6,42 @@
    
         'invisible':contactForm.valid,
       }">
-       @if (true) {
+
+      <!-- Time for the name -->
+ @if (contactForm.get("fullName")?.errors?.['required'] && contactForm.get("fullName")?.touched) {
         <li>- Name is required.</li>
        }
-       @if (true) {
+
+       @if (contactForm.get("fullName")?.touched && contactForm.get("fullName")?.invalid ) {
+      
+       @if (contactForm.get("fullName")?.errors?.['minlength']) {
         <li>- Name too short.</li>
        }
-       @if (true) {
+       @if (contactForm.get("fullName")?.errors?.['maxlength']) {
         <li>- Name too long.</li>
-       }
+       }}
 
        <!-- Time for the email -->
-        @if (true) {
+        @if (false) {
           <li>- Email is required.</li>
         }
-        @if (true) {
+        @if (false) {
           <li>- Enter a valid email.</li>
         }
 
         <!-- Time for option -->
-         @if (true) {
+         @if (false) {
           <li>- Select an option.</li>
          }
 
          <!-- Time for message -->
-          @if (true) {
+          @if (false) {
             <li>- Message is required.</li>
           }
-          @if (true) {
+          @if (false) {
             <li>- Message is too short.</li>
           }
-          @if (true) {
+          @if (false) {
             <li>- Message is too long.</li>
           }
     </ul>
