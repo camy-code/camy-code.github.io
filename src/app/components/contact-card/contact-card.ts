@@ -53,6 +53,10 @@ msg_check = signal(false);
       message:new FormControl('', [Validators.required, Validators.minLength(10), Validators.maxLength(500)])
     });
 
+    constructor() {
+      
+    }
+
     
     
     onSubmit(): void {

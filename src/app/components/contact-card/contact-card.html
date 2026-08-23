@@ -6,8 +6,39 @@
    
         'invisible':contactForm.valid,
       }">
-      <li>- Hello</li>  
-      <li>- Hello</li>  
+       @if (true) {
+        <li>- Name is required.</li>
+       }
+       @if (true) {
+        <li>- Name too short.</li>
+       }
+       @if (true) {
+        <li>- Name too long.</li>
+       }
+
+       <!-- Time for the email -->
+        @if (true) {
+          <li>- Email is required.</li>
+        }
+        @if (true) {
+          <li>- Enter a valid email.</li>
+        }
+
+        <!-- Time for option -->
+         @if (true) {
+          <li>- Select an option.</li>
+         }
+
+         <!-- Time for message -->
+          @if (true) {
+            <li>- Message is required.</li>
+          }
+          @if (true) {
+            <li>- Message is too short.</li>
+          }
+          @if (true) {
+            <li>- Message is too long.</li>
+          }
     </ul>
       
     </div>
