@@ -29,7 +29,7 @@ msg_check = signal(false);
     formService = inject(FormService);
 
     subjectOption = [
-      {"text": "Select an option", value:null},
+      {"text": "Select an option", value:''},
       {"text":"Freelance Project", value:"project"},
       {"text":"Tutoring", value:"tutor"},
       {"text":"Other", value:"other"}
@@ -49,13 +49,11 @@ msg_check = signal(false);
     contactForm = new FormGroup({
       fullName:new FormControl('', [Validators.required, Validators.minLength(2), Validators.maxLength(100)]),
       email:new FormControl('', [Validators.required, Validators.email]),
-      Subject:new FormControl(null, [Validators.required]),
+      Subject:new FormControl('', [Validators.required]),
       message:new FormControl('', [Validators.required, Validators.minLength(5), Validators.maxLength(500)])
     });
 
-    constructor() {
-
-    }
+    
 
     
     
