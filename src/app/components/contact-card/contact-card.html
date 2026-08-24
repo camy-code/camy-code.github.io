@@ -22,28 +22,30 @@
        }}
 
        <!-- Time for the email -->
-        @if (false) {
+        
+        @if (contactForm.get("email")?.errors?.['required'] && contactForm.get("email")?.touched) {
           <li>- Email is required.</li>
         }
-        @if (false) {
+        @if (contactForm.get("email")?.errors?.['email'] && contactForm.get("email")?.touched) {
           <li>- Enter a valid email.</li>
         }
 
         <!-- Time for option -->
-         @if (false) {
+         @if (contactForm.get("Subject")?.errors?.['required'] && contactForm.get("Subject")?.touched) {
           <li>- Select an option.</li>
          }
 
          <!-- Time for message -->
-          @if (false) {
+          @if (contactForm.get("message")?.errors?.['required'] && contactForm.get("message")?.touched) {
             <li>- Message is required.</li>
           }
-          @if (false) {
+          @if (contactForm.get("message")?.errors?.['minlength'] && contactForm.get("message")?.touched) {
             <li>- Message is too short.</li>
           }
-          @if (false) {
+          @if (contactForm.get("message")?.errors?.['maxlength'] && contactForm.get("message")?.touched) {
             <li>- Message is too long.</li>
           }
+           
     </ul>
       
     </div>

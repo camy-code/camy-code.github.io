@@ -50,11 +50,11 @@ msg_check = signal(false);
       fullName:new FormControl('', [Validators.required, Validators.minLength(2), Validators.maxLength(100)]),
       email:new FormControl('', [Validators.required, Validators.email]),
       Subject:new FormControl(null, [Validators.required]),
-      message:new FormControl('', [Validators.required, Validators.minLength(10), Validators.maxLength(500)])
+      message:new FormControl('', [Validators.required, Validators.minLength(5), Validators.maxLength(500)])
     });
 
     constructor() {
-      
+
     }
 
     
