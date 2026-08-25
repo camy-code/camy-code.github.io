@@ -9,7 +9,7 @@ import { TechnicalSkills } from '../interfaces/technicalskills-interface';
 export class InfoService {
   landingPageInfo: LandpageInterface = {
     imgURL:
-      'https://pbs.twimg.com/media/GhybPXwaoAA-5KD.jpg',
+      './../assets/camAnime.png',
     altIMG: 'A picture of me!',
     title: 'Computer Scientist',
     greeting: 'Hello! I am Cam!',

@@ -57,6 +57,13 @@
         ) {
           <li>- Message is too long.</li>
         }
+
+        @if (true) {
+          <li class="text-green-400">Form sent successfully!</li>
+        }
+        @if (true) {
+          <li class="text-red-400">Form failed to send!</li>
+        }
       </ul>
     </div>
     <div class="grid grid-cols-2 gap-3">
