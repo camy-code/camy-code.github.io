@@ -2,9 +2,9 @@
     <!-- Can change colour here -->
   <div class="flex md:flex-row flex-col justify-center p-6 md:w-2/3 sm:w-1/1 mx-auto gap-1">
     <div class="flex flex-col gap-0">
-      <h3 class="">{{ info().greeting }}</h3>
-      <h2>{{ info().title }}</h2>
-      <p>{{ info().spiel }}</p>
+      <h3 class="font-sans text-2xl text-bold">{{ info().greeting }}</h3>
+      <h2 class="font-sans text-xl text-medium font-semibold my-2">{{ info().title }}</h2>
+      <p class="font-sans text-lg text-md leading-7">{{ info().spiel }}</p>
       <!-- <div class="mt-4">
         <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded" href="#contact-section">Contact me!</button>
       </div> -->
@@ -35,6 +35,6 @@
       
       </div>
     </div>
-    <img [src]="info().imgURL" [alt]="info().altIMG" class="h-auto max-w-150 w-[25%] rounded-xl mx-auto" />
+    <img [src]="info().imgURL" [alt]="info().altIMG" class="h-auto max-w-225 w-100 rounded-xl mx-auto" />
   </div>
 </div>
