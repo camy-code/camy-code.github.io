@@ -17,14 +17,12 @@ import { signal } from '@angular/core';
   styleUrl: './contact-card.css',
 })
 export class ContactCard {
-  error_message = signal("");
-has_error = signal(false)
+ 
+  // We will update these once you send
+error_send = signal(false);
+success_send = signal(false);
 
 // This is to flag which fields need work
-name_check = signal(false);
-email_check = signal(false);
-option_check = signal(false);
-msg_check = signal(false);
 
     formService = inject(FormService);
 
@@ -70,11 +68,16 @@ msg_check = signal(false);
 
       // Data cleaning
 
-      let form_status: boolean = this.formService.sendMessage(contactValues);
-      if (form_status) { // a successful send
-        // TODO
-      } else { // an error send
-          // TODO
+      if (this.contactForm.valid) {
+        console.log("Send away")
+        let val = this.formService.sendMessage(contactValues);
+        if (val == true) {
+          this.success_send.set(true); // This means we got a success
+        } else {
+          this.error_send.set(false);
+        }
+      } else {
+        console.log("Something fishy is going on")
       }
 
     }
