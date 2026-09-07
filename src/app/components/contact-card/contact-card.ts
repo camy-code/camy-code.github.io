@@ -74,7 +74,8 @@ success_send = signal(false);
         if (val == true) {
           this.success_send.set(true); // This means we got a success
         } else {
-          this.error_send.set(false);
+          this.error_send.set(true);
+          console.log("Some error")
         }
       } else {
         console.log("Something fishy is going on")
