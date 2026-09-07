@@ -7,7 +7,7 @@ export class FormService {
     sendMessage(data:ContactInterface): boolean {
         let form_status: boolean = true;
 
-        console.log("TODO gotta connect and API to send")
+       // console.log("TODO gotta connect and API to send")
 
         return form_status;
     }

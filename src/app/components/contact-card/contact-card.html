@@ -6,7 +6,7 @@
     <div>
       <ul
         [ngClass]="{
-          'text-center mb-3': true,
+          'text-center mb-3 text-lg': true,
 
           invisible: contactForm.valid,
         }"
@@ -57,13 +57,14 @@
         ) {
           <li>- Message is too long.</li>
         }
-
-        @if (true) {
-          <li class="text-green-400">Form sent successfully!</li>
+     
+        @if (success_send()) {
+          <li class="text-green-600 ">Form sent successfully!</li>
         }
-        @if (true) {
-          <li class="text-red-400">Form failed to send!</li>
+        @if (error_send()) {
+          <li class="text-red-600 ">Form failed to send! Try again later.</li>
         }
+        
       </ul>
     </div>
     <div class="grid grid-cols-2 gap-3">
@@ -109,10 +110,11 @@
         formControlName="message"
       ></textarea>
       <button
-        class="col-span-2 bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"
+        class="col-span-2 bg-blue-400 hover:bg-blue-300 text-white font-bold py-2 px-4 rounded"
+        [ngClass]="{'bg-gray-500 hover:bg-gray-400': contactForm.invalid || error_send() || success_send()}"
         (click)="onSubmit()"
         type="button"
-        [disabled]="contactForm.invalid"
+        [disabled]="contactForm.invalid || error_send() || success_send()"
       >
         Submit
       </button>
