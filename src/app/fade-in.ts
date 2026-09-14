@@ -103,13 +103,23 @@ export class FadeInDirective implements AfterViewInit, OnDestroy {
         // If you want it to fade in every time you scroll away
         // and back, remove this line.
      //   this.observer?.unobserve(this.el.nativeElement);
+      } else {
+        // Now we are going to do the opposite so we always get a fade
+          this.el.nativeElement.classList.add(
+          'opacity-0',
+          'translate-y-6'
+        );
+         this.el.nativeElement.classList.remove(
+          'opacity-100',
+          'translate-y-0'
+        );
       }
 
     }, {
 
-      // The observer triggers when approximately 20% of the
+      // The observer triggers when approximately 10% of the
       // element has entered the viewport.
-      threshold: 0.2
+      threshold: 0.1
     });
 
 
