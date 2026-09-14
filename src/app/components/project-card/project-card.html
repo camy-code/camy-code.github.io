@@ -1,6 +1,7 @@
 <div
   id="card"
-  [class]="(isHovered ? 'bg-gray-100' : 'bg-white') + baseCardCSS"
+  [ngClass]="{'bg-gray-100':isHovered, 'bg-white':!isHovered }"
+  class="relative flex flex-row w-3/4  max-w-[825px] rounded-xl border-2 mx-auto"
   (mouseenter)="onHover(true)"
   (mouseleave)="onHover(false)"
  
