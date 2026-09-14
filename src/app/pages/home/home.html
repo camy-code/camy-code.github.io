@@ -1,11 +1,13 @@
 <!-- The relative order of things -->
- <div class="">
-    <!-- Can change the background here and maybe gradient? -->
-<app-hero [info]="info_service.getLandingPageInfo()"/>
-<app-project [infoArr]="info_service.getProjects()"/>
-<app-techskill [infoArr]="info_service.getTechnicalSkills()"/>
-<app-certificates [infoArr]="info_service.getCertificates()"/>
+<div class="">
+  <!-- Can change the background here and maybe gradient? -->
+  <section appFadeIn><app-hero [info]="info_service.getLandingPageInfo()" /></section>
+  
+  <section appFadeIn><app-project [infoArr]="info_service.getProjects()" /></section>
 
-<app-contact/>
+   <section appFadeIn><app-techskill [infoArr]="info_service.getTechnicalSkills()" /></section>
 
+   <section appFadeIn><app-certificates [infoArr]="info_service.getCertificates()" /></section>
+
+  <section appFadeIn><app-contact /></section>
 </div>

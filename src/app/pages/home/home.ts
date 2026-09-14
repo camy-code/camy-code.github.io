@@ -8,9 +8,11 @@ import { Techskill } from '../../components/home-parts/techskill/techskill';
 
 import { InfoService } from '../../services/info-service';
 
+import { FadeInDirective } from '../../fade-in';
+
 @Component({
   selector: 'app-home',
-  imports: [Certificates, Contact, Hero, Project, Techskill],
+  imports: [Certificates, Contact, Hero, Project, Techskill, FadeInDirective],
   templateUrl: './home.html',
   styleUrl: './home.css',
 })
