@@ -3,6 +3,8 @@ import { BreakpointObserver, Breakpoints } from '@angular/cdk/layout';
 import {NgClass} from '@angular/common';
 import { MenuInterface } from '../../../interfaces/menu-interface';
 
+import { HostListener } from '@angular/core';
+
 @Component({
   selector: 'app-navbar',
   imports: [],
@@ -14,6 +16,7 @@ export class Navbar {
 
   isMobile = signal(false);
   isMenuOpen = signal(false);
+  
 
   menuItems: Array<MenuInterface> = [
     { title: 'Home', link: '#hero-section'}, 
@@ -29,5 +32,17 @@ export class Navbar {
       this.isMobile.set(result.matches);
       this.isMenuOpen.set(false); // Close menu when switching to mobile view
     });
+  }
+
+  // Time to add the close click thing
+  @HostListener('document:click',['$event'])
+  onDocumentClick(event:MouseEvent){
+    const target = event.target as HTMLElement;
+    console.log("We got a click!")
+
+    if (!target.closest('nav') && this.isMobile() == true && this.isMenuOpen() == true) {
+      console.log("Nav was not touched!")
+      this.isMenuOpen.set(false)
+    }
   }
 }

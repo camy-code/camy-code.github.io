@@ -1,3 +1,4 @@
+<nav>
 <div id="nav-container" class="bg-blue-400 fixed w-full z-50">
   <div class="flex flex-row justify-between items-center p-4 md:w-3/4 mx-auto p-6">
     <div class="flex flex-row gap-2">
@@ -22,6 +23,7 @@
           />
         </svg>
         @if (isMenuOpen()) {
+          
           <div
             class="bg-blue-400 p-4 rounded shadow-lg flex flex-col items-end gap-2  w-1/2 absolute top-16 right-0 z-50"
           >
@@ -29,6 +31,7 @@
               <a [href]="item.link" class="text-white hover:text-black mx-auto" >{{ item.title }}</a>
             }
           </div>
+        
         }
         <!-- Desktop view -->
       } @else { 
@@ -39,3 +42,4 @@
     </div>
   </div>
 </div>
+</nav>
