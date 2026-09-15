@@ -19,7 +19,7 @@ export class Navbar {
   
 
   menuItems: Array<MenuInterface> = [
-    { title: 'Home', link: '#hero-section'}, 
+   // { title: 'Home', link: '#hero-section'}, 
     { title: 'Projects', link: '#project-section' },
     { title: 'Technical skills', link: '#techskill-section' },
     {title: 'Certificates', link: '#certificates-section'},

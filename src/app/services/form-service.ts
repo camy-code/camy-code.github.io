@@ -8,7 +8,9 @@ export class FormService {
         let form_status: boolean = true;
 
        // console.log("TODO gotta connect and API to send")
-        
-        return false;
+        // TODO send the gosh dang message here 
+
+
+        return form_status;
     }
 }
