@@ -73,7 +73,7 @@
           'bg-red-100':
             contactForm.get('fullName')?.invalid && contactForm.get('fullName')?.touched,
         }"
-        class="md:col-span-1 col-span-2 border-1 px-3 py-2.5 text-sm"
+        class="md:col-span-1 col-span-2 border-1 px-3 py-2.5 text-lg"
         type="text"
         [placeholder]="placeHolderValues.fullName"
         formControlName="fullName"
@@ -83,7 +83,7 @@
         [ngClass]="{
           'bg-red-100': contactForm.get('email')?.invalid && contactForm.get('email')?.touched,
         }"
-        class="md:col-span-1 col-span-2 border-1 px-3 py-2.5 text-sm"
+        class="md:col-span-1 col-span-2 border-1 px-3 py-2.5 text-lg"
         type="text"
         [placeholder]="placeHolderValues.email"
         formControlName="email"
@@ -108,16 +108,16 @@
           'bg-red-100': contactForm.get('message')?.invalid && contactForm.get('message')?.touched,
         }"
         rows="4"
-        class="resize-none w-full col-span-2 border-1 px-3 py-2.5"
+        class="resize-none w-full col-span-2 border-1 px-3 py-2.5 text-lg"
         [placeholder]="placeHolderValues.message[0]"
         formControlName="message"
       ></textarea>
       <button
         class="col-span-2 bg-blue-400 hover:bg-blue-300 text-white font-bold py-2 px-4 rounded"
-        [ngClass]="{'bg-gray-500 hover:bg-gray-400': contactForm.invalid || error_send() || success_send()}"
+        [ngClass]="{'bg-gray-500 hover:bg-gray-400': failed_send() || error_send() || success_send()}"
         (click)="onSubmit()"
         type="button"
-        [disabled]="contactForm.invalid || error_send() || success_send()"
+        [disabled]=" error_send() || success_send()"
       >
         Submit
       </button>

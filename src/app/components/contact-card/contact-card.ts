@@ -21,6 +21,7 @@ export class ContactCard {
   // We will update these once you send
 error_send = signal(false);
 success_send = signal(false);
+failed_send = signal(false)
 
 // This is to flag which fields need work
 
@@ -79,6 +80,7 @@ success_send = signal(false);
         }
       } else {
         console.log("Something fishy is going on")
+        this.failed_send.set(true)
       }
 
     }
