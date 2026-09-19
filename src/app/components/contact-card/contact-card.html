@@ -8,17 +8,21 @@
         [ngClass]="{
           'text-center mb-3 text-lg': true,
 
-          'invisible': contactForm.valid && !error_send() && !success_send(),
+          invisible: contactForm.valid && !error_send() && !success_send(),
         }"
       >
         <!-- Time for the name -->
         @if (
-          contactForm.get('fullName')?.errors?.['required'] && (contactForm.get('fullName')?.touched || failed_send())
+          contactForm.get('fullName')?.errors?.['required'] &&
+          (contactForm.get('fullName')?.touched || failed_send())
         ) {
           <li>- Name is required.</li>
         }
 
-        @if (contactForm.get('fullName')?.touched && (contactForm.get('fullName')?.invalid || failed_send())) {
+        @if (
+          contactForm.get('fullName')?.touched &&
+          (contactForm.get('fullName')?.invalid || failed_send())
+        ) {
           @if (contactForm.get('fullName')?.errors?.['minlength']) {
             <li>- Name too short.</li>
           }
@@ -29,21 +33,31 @@
 
         <!-- Time for the email -->
 
-        @if (contactForm.get('email')?.errors?.['required'] && (contactForm.get('email')?.touched || failed_send())) {
+        @if (
+          contactForm.get('email')?.errors?.['required'] &&
+          (contactForm.get('email')?.touched || failed_send())
+        ) {
           <li>- Email is required.</li>
         }
-        @if (contactForm.get('email')?.errors?.['email'] && (contactForm.get('email')?.touched || failed_send())) {
+        @if (
+          contactForm.get('email')?.errors?.['email'] &&
+          (contactForm.get('email')?.touched || failed_send())
+        ) {
           <li>- Enter a valid email.</li>
         }
 
         <!-- Time for option -->
-        @if (contactForm.get('Subject')?.errors?.['required'] && (contactForm.get('Subject')?.touched || failed_send())) {
+        @if (
+          contactForm.get('Subject')?.errors?.['required'] &&
+          (contactForm.get('Subject')?.touched || failed_send())
+        ) {
           <li>- Select an option.</li>
         }
 
         <!-- Time for message -->
         @if (
-          contactForm.get('message')?.errors?.['required'] && (contactForm.get('message')?.touched || failed_send())
+          contactForm.get('message')?.errors?.['required'] &&
+          (contactForm.get('message')?.touched || failed_send())
         ) {
           <li>- Message is required.</li>
         }
@@ -57,31 +71,33 @@
         ) {
           <li>- Message is too long.</li>
         }
-     
+
         @if (success_send()) {
-          <li class="text-green-600 ">Form sent successfully!</li>
+          <li class="text-green-600">Form sent successfully!</li>
         }
         @if (error_send()) {
-          <li class="text-red-600 ">Form failed to send! Try again later.</li>
+          <li class="text-red-600">Form failed to send! Try again later.</li>
         }
-        
       </ul>
     </div>
     <div class="grid grid-cols-2 gap-3">
       <input
         [ngClass]="{
           'bg-red-100':
-            contactForm.get('fullName')?.invalid && (contactForm.get('fullName')?.touched || failed_send()),
+            contactForm.get('fullName')?.invalid &&
+            (contactForm.get('fullName')?.touched || failed_send()),
         }"
         class="md:col-span-1 col-span-2 border-1 px-3 py-2.5 text-lg"
         type="text"
         [placeholder]="placeHolderValues.fullName"
         formControlName="fullName"
       />
-      
+
       <input
         [ngClass]="{
-          'bg-red-100': contactForm.get('email')?.invalid && (contactForm.get('email')?.touched || failed_send()),
+          'bg-red-100':
+            contactForm.get('email')?.invalid &&
+            (contactForm.get('email')?.touched || failed_send()),
         }"
         class="md:col-span-1 col-span-2 border-1 px-3 py-2.5 text-lg"
         type="text"
@@ -89,12 +105,16 @@
         formControlName="email"
         id="email"
       />
-      
+
       <select
         id="options"
         class="col-span-2 block w-full px-3 py-2.5 bg-neutral-secondary-medium border border-default-medium text-heading text-lg rounded-base focus:ring-brand shadow-xs"
         formControlName="Subject"
-        [ngClass]="{ 'bg-red-100': contactForm.get('Subject')?.invalid && (contactForm.get('Subject')?.touched || failed_send())}"
+        [ngClass]="{
+          'bg-red-100':
+            contactForm.get('Subject')?.invalid &&
+            (contactForm.get('Subject')?.touched || failed_send()),
+        }"
       >
         <option selected [value]="subjectOption[0].value">{{ subjectOption[0].text }}</option>
 
@@ -103,11 +123,52 @@
         }
       </select>
       <!-- We need a new select -->
+      <div class="text-lg col-span-2 relative">
+        <button
+          id="dropdownDefaultButton"
+          data-dropdown-toggle="dropdown"
+          class="inline-flex items-center justify-between bg-brand box-border border border-1 rounded-xl w-full hover:bg-gray-200 focus:ring-4 focus:ring-brand-medium shadow-xs font-medium leading-5 rounded-base px-4 py-2.5 focus:outline-none"
+          type="button"
+          (click)="toggleOptions()"
+        >
+          Options
+          <svg
+            class="w-4 h-4 ms-1.5 -me-0.5"
+            aria-hidden="true"
+            xmlns="http://www.w3.org/2000/svg"
+            width="24"
+            height="24"
+            fill="none"
+            viewBox="0 0 24 24"
+          >
+            <path
+              stroke="currentColor"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="m19 9-7 7-7-7"
+            />
+          </svg>
+        </button>
+        @if (isOptionsExpanded()) {
+          
+          <div id="dropdown" class="absolute p-1 bg-blue-300 h-auto w-full">
+            @for (item of subjectOption.slice(1); track $index) {
+              
+        <li class="inline-flex items-center w-full p-2  hover:text-heading rounded">{{item.text}}</li>
+      
+            }
+          </div>
+        
+        }
 
+      </div>
       <!-- end of new select -->
       <textarea
         [ngClass]="{
-          'bg-red-100': contactForm.get('message')?.invalid && (contactForm.get('message')?.touched || failed_send()),
+          'bg-red-100':
+            contactForm.get('message')?.invalid &&
+            (contactForm.get('message')?.touched || failed_send()),
         }"
         rows="4"
         class="resize-none w-full col-span-2 border-1 px-3 py-2.5 text-lg"
@@ -116,10 +177,10 @@
       ></textarea>
       <button
         class="col-span-2 bg-blue-400 hover:bg-blue-300 text-white font-bold py-2 px-4 rounded"
-        [ngClass]="{'bg-gray-500 hover:bg-gray-400':  error_send() || success_send()}"
+        [ngClass]="{ 'bg-gray-500 hover:bg-gray-400': error_send() || success_send() }"
         (click)="onSubmit()"
         type="button"
-        [disabled]=" error_send() || success_send()"
+        [disabled]="error_send() || success_send()"
       >
         Submit
       </button>

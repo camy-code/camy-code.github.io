@@ -24,6 +24,10 @@ success_send = signal(false);
 failed_send = signal(false)
 
 // This is to flag which fields need work
+isOptionsExpanded = signal(false) // This is for the options
+  toggleOptions():void  {
+    this.isOptionsExpanded.update((currentValue => !currentValue))
+  }
 
     formService = inject(FormService);
 
