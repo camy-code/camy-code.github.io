@@ -38,10 +38,10 @@ export class Navbar {
   @HostListener('document:click',['$event'])
   onDocumentClick(event:MouseEvent){
     const target = event.target as HTMLElement;
-    console.log("We got a click!")
+    
 
     if (!target.closest('nav') && this.isMobile() == true && this.isMenuOpen() == true) {
-      console.log("Nav was not touched!")
+      //console.log("Nav was not touched!")
       this.isMenuOpen.set(false)
     }
   }

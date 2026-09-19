@@ -1,14 +1,15 @@
 import { Component, inject } from '@angular/core';
 import { ContactInterface } from '../../interfaces/contact-interface';
 
-import {FormGroup, FormControl} from "@angular/forms"
-import {ReactiveFormsModule, Validators} from '@angular/forms';
+import { FormGroup, FormControl } from '@angular/forms';
+import { ReactiveFormsModule, Validators } from '@angular/forms';
 
 import { NgClass } from '@angular/common';
 
 import { FormService } from '../../services/form-service';
 
 import { signal } from '@angular/core';
+import { HostListener } from '@angular/core';
 
 @Component({
   selector: 'app-contact-card',
@@ -17,81 +18,101 @@ import { signal } from '@angular/core';
   styleUrl: './contact-card.css',
 })
 export class ContactCard {
- 
   // We will update these once you send
-error_send = signal(false);
-success_send = signal(false);
-failed_send = signal(false)
+  error_send = signal(false);
+  success_send = signal(false);
+  failed_send = signal(false);
 
-// This is to flag which fields need work
-isOptionsExpanded = signal(false) // This is for the options
-isOptionsTouched = signal(false)
-  toggleOptions():void  {
-    this.isOptionsExpanded.update((currentValue => !currentValue))
+  // This is to flag which fields need work
+  isOptionsExpanded = signal(false); // This is for the options
+  isOptionsTouched = signal(false);
+  toggleOptions(): void {
+    this.isOptionsExpanded.update((currentValue) => !currentValue);
   }
-  
 
-    formService = inject(FormService);
+  formService = inject(FormService);
 
-    subjectOption = [
-      {"text": "Select an option", value:''},
-      {"text":"Freelance Project", value:"project"},
-      {"text":"Tutoring", value:"tutor"},
-      {"text":"Other", value:"other"}
-    ]
-    placeHolderValues = {
-          fullName:"John doe",
-    email:"john@example.com",
-    Subject:this.subjectOption[0],
-    Other:"What is the subject of your message?",
-    message:["Enter your message here",
-      "Tell me about your project idea.",
-      "Tell me about what you would like to learn.",
-      "Elaborate on your the subject here."
-    ]
-    }
+  subjectOption = [
+    { text: 'Select an option', value: '' },
+    { text: 'Freelance Project', value: 'project' },
+    { text: 'Tutoring', value: 'tutor' },
+    { text: 'Other', value: 'other' },
+  ];
+  placeHolderValues = {
+    fullName: 'John doe',
+    email: 'john@example.com',
+    Subject: this.subjectOption[0],
+    Other: 'What is the subject of your message?',
+    message: [
+      'Enter your message here',
+      'Tell me about your project idea.',
+      'Tell me about what you would like to learn.',
+      'Elaborate on your the subject here.',
+    ],
+  };
 
-    contactForm = new FormGroup({
-      fullName:new FormControl('', [Validators.required, Validators.minLength(2), Validators.maxLength(100)]),
-      email:new FormControl('', [Validators.required, Validators.email]),
-      Subject:new FormControl('', [Validators.required]),
-      message:new FormControl('', [Validators.required, Validators.minLength(5), Validators.maxLength(500)])
-    });
+  contactForm = new FormGroup({
+    fullName: new FormControl('', [
+      Validators.required,
+      Validators.minLength(2),
+      Validators.maxLength(100),
+    ]),
+    email: new FormControl('', [Validators.required, Validators.email]),
+    Subject: new FormControl('', [Validators.required]),
+    message: new FormControl('', [
+      Validators.required,
+      Validators.minLength(5),
+      Validators.maxLength(500),
+    ]),
+  });
 
-    
-  setOptions(value:string):void {
-    this.contactForm.patchValue({Subject:value});
+  setOptions(value: string): void {
+    this.contactForm.patchValue({ Subject: value });
     this.isOptionsExpanded.set(false);
     this.isOptionsTouched.set(true);
   }
-    
-    
-    async onSubmit(): Promise<void> {
-      // TODO: check if the data is clean
-      const contactValues: ContactInterface = {
-        fullName: this.contactForm.value.fullName ?? '',
-        email: this.contactForm.value.email ?? '',
-        Subject: this.contactForm.value.Subject ?? 'null',
-        message: this.contactForm.value.message ?? ''
-      };
 
-      //console.log("Contact Values: ", contactValues);
+  async onSubmit(): Promise<void> {
+    // TODO: check if the data is clean
+    const contactValues: ContactInterface = {
+      fullName: this.contactForm.value.fullName ?? '',
+      email: this.contactForm.value.email ?? '',
+      Subject: this.contactForm.value.Subject ?? 'null',
+      message: this.contactForm.value.message ?? '',
+    };
 
-      // Data cleaning
+    //console.log("Contact Values: ", contactValues);
 
-      if (this.contactForm.valid) {
+    // Data cleaning
+
+    if (this.contactForm.valid) {
       //  console.log("Send away")
-        const val = await this.formService.sendMessage(contactValues);
-        if (val == true) {
-          this.success_send.set(true); // This means we got a success
-        } else {
-          this.error_send.set(true);
-       //   console.log("Some error")
-        }
+      const val = await this.formService.sendMessage(contactValues);
+      if (val == true) {
+        this.success_send.set(true); // This means we got a success
       } else {
-       // console.log("Something fishy is going on")
-        this.failed_send.set(true)
+        this.error_send.set(true);
+        //   console.log("Some error")
       }
-
+    } else {
+      // console.log("Something fishy is going on")
+      this.failed_send.set(true);
     }
+  }
+
+  // One last thing to add and then we are going to refactor this later.
+
+  @HostListener('document:click', ['$event'])
+  onDocumentClick(event: MouseEvent) {
+    const target = event.target as HTMLElement;
+   
+    console.log(target.id)
+
+    if (this.isOptionsExpanded()) {
+      if (target.id != "dropdownDefaultButton" && target.id != "dropdown") {
+        this.isOptionsExpanded.set(false);
+      }
+    }
+    
+  }
 }
