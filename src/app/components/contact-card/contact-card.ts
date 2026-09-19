@@ -66,7 +66,7 @@ isOptionsTouched = signal(false)
   }
     
     
-    onSubmit(): void {
+    async onSubmit(): Promise<void> {
       // TODO: check if the data is clean
       const contactValues: ContactInterface = {
         fullName: this.contactForm.value.fullName ?? '',
@@ -75,21 +75,21 @@ isOptionsTouched = signal(false)
         message: this.contactForm.value.message ?? ''
       };
 
-      console.log("Contact Values: ", contactValues);
+      //console.log("Contact Values: ", contactValues);
 
       // Data cleaning
 
       if (this.contactForm.valid) {
-        console.log("Send away")
-        let val = this.formService.sendMessage(contactValues);
+      //  console.log("Send away")
+        const val = await this.formService.sendMessage(contactValues);
         if (val == true) {
           this.success_send.set(true); // This means we got a success
         } else {
           this.error_send.set(true);
-          console.log("Some error")
+       //   console.log("Some error")
         }
       } else {
-        console.log("Something fishy is going on")
+       // console.log("Something fishy is going on")
         this.failed_send.set(true)
       }
 

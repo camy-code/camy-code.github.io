@@ -1,16 +1,35 @@
 import { Service } from '@angular/core';
 import { ContactInterface } from '../interfaces/contact-interface';
-import { console } from 'inspector';
+
+import emailjs, { type EmailJSResponseStatus } from '@emailjs/browser';
+
 @Service()
 export class FormService {
 
-    sendMessage(data:ContactInterface): boolean {
-        let form_status: boolean = true;
+    serviceID = "service_7276vra"
+    templateID = "template_ywdxev3"
+    publicKey = "sTkyYY4uK0me1oEbS"
 
-       // console.log("TODO gotta connect and API to send")
-        // TODO send the gosh dang message here 
+    async sendMessage(data: ContactInterface) {
+  try {
+    await emailjs.send(
+      this.serviceID,
+      this.templateID,
+      {
+         name: data.fullName,
+    email: data.email,
+    subject: data.Subject,
+    message: data.message
+      },
+      {
+        publicKey: this.publicKey
+      }
+    );
 
-
-        return form_status;
-    }
+    return true;
+  } catch (error) {
+    console.log('Failed to send:', error);
+    return false;
+  }
+}
 }
