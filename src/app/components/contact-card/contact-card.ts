@@ -28,6 +28,7 @@ isOptionsExpanded = signal(false) // This is for the options
   toggleOptions():void  {
     this.isOptionsExpanded.update((currentValue => !currentValue))
   }
+  
 
     formService = inject(FormService);
 
@@ -57,7 +58,10 @@ isOptionsExpanded = signal(false) // This is for the options
     });
 
     
-
+  setOptions(value:string):void {
+    this.contactForm.patchValue({Subject:value});
+    this.isOptionsExpanded.set(false);
+  }
     
     
     onSubmit(): void {

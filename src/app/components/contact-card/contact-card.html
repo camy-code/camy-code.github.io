@@ -123,7 +123,7 @@
         }
       </select>
       <!-- We need a new select -->
-      <div class="text-lg col-span-2 relative">
+      <div class="text-lg col-span-2 relative" >
         <button
           id="dropdownDefaultButton"
           data-dropdown-toggle="dropdown"
@@ -131,7 +131,8 @@
           type="button"
           (click)="toggleOptions()"
         >
-          Options
+        {{subjectOption.find((item) => item.value === contactForm.get('Subject')?.value)?.text}}
+         
           <svg
             class="w-4 h-4 ms-1.5 -me-0.5"
             aria-hidden="true"
@@ -152,10 +153,10 @@
         </button>
         @if (isOptionsExpanded()) {
           
-          <div id="dropdown" class="absolute p-1 bg-blue-300 h-auto w-full">
-            @for (item of subjectOption.slice(1); track $index) {
+          <div id="dropdown" class="absolute p-1 bg-gray-300 h-auto w-full rounded-xl">
+            @for (item of subjectOption; track $index) {
               
-        <li class="inline-flex items-center w-full p-2  hover:text-heading rounded">{{item.text}}</li>
+        <li class="inline-flex items-center w-full p-2  hover:text-heading rounded hover:bg-gray-400" (click)="setOptions(item.value)">{{item.text}}</li>
       
             }
           </div>
