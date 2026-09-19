@@ -25,6 +25,7 @@ failed_send = signal(false)
 
 // This is to flag which fields need work
 isOptionsExpanded = signal(false) // This is for the options
+isOptionsTouched = signal(false)
   toggleOptions():void  {
     this.isOptionsExpanded.update((currentValue => !currentValue))
   }
@@ -61,6 +62,7 @@ isOptionsExpanded = signal(false) // This is for the options
   setOptions(value:string):void {
     this.contactForm.patchValue({Subject:value});
     this.isOptionsExpanded.set(false);
+    this.isOptionsTouched.set(true);
   }
     
     

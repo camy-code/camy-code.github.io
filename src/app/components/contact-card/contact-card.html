@@ -49,7 +49,7 @@
         <!-- Time for option -->
         @if (
           contactForm.get('Subject')?.errors?.['required'] &&
-          (contactForm.get('Subject')?.touched || failed_send())
+          (contactForm.get('Subject')?.touched || failed_send() || isOptionsTouched())
         ) {
           <li>- Select an option.</li>
         }
@@ -105,7 +105,7 @@
         formControlName="email"
         id="email"
       />
-
+<!-- 
       <select
         id="options"
         class="col-span-2 block w-full px-3 py-2.5 bg-neutral-secondary-medium border border-default-medium text-heading text-lg rounded-base focus:ring-brand shadow-xs"
@@ -121,7 +121,7 @@
         @for (item of subjectOption.slice(1); track $index) {
           <option [value]="item.value">{{ item.text }}</option>
         }
-      </select>
+      </select> -->
       <!-- We need a new select -->
       <div class="text-lg col-span-2 relative" >
         <button
@@ -130,6 +130,12 @@
           class="inline-flex items-center justify-between bg-brand box-border border border-1 rounded-xl w-full hover:bg-gray-200 focus:ring-4 focus:ring-brand-medium shadow-xs font-medium leading-5 rounded-base px-4 py-2.5 focus:outline-none"
           type="button"
           (click)="toggleOptions()"
+             [ngClass]="{
+          'bg-red-100':
+            contactForm.get('Subject')?.invalid &&
+            (isOptionsTouched() || failed_send()),
+        }"
+        (touched)="contactForm.get('Subject')?.markAsTouched()"
         >
         {{subjectOption.find((item) => item.value === contactForm.get('Subject')?.value)?.text}}
          
